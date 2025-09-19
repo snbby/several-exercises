@@ -1,6 +1,7 @@
+import pytest
+
 from license_plate_problem import code6_seq
 
-import pytest
 
 def test_license_plate_problem():
     assert code6_seq(0) == "000000"

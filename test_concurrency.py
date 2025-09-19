@@ -2,6 +2,7 @@ import asyncio
 
 from concurrency_exercise import url_fetcher
 
+
 def test_concurrent_url_fetcher():
     urls = {
         'https://python.org': {'expected_status_code': 200},

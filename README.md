@@ -21,6 +21,7 @@ uv run pytest
 I decided the concurrent function to return dict with results.  
 We can just return the list of responses/errors in the same order the urls were provided, but in my opinion it will require more boilerplate to handle these results.  
 Retry wrapper logic can be added additionally (let's say 3 retries with exponential backoff).  
+Printing is used to showcase active and max_active coroutines. Testing actual concurrency requires more boilerplate.  
 
 
 ### License plate problem
