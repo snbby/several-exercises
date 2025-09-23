@@ -1,29 +1,52 @@
-## General info
+# General info
+Repo is divided to Python and Javascript code
+
+```
+# Installation
+
+git clone git@github.com:snbby/several-exercises.git
+cd several-exercises
+```
+
+## Javascript
+I have done the first task about concurrent requests.  
+It uses semaphore in order to keep the track of `maxConcurrent` requests.  
+For testing purposes I use dependency injection on fetch function in order to mock real requests.
+```
+# Preparement
+
+cd js
+node -V # Should be higher than 18
+```
+### Launch
+```
+node concurrency-exercise.js # to run code snippet
+node concurrency-exercise.test.js # to run test on maxConcurrency and mocked results
+```
+
+
+## Python
 I used `uv` for package management  
 `httpx` for async requests  
 `pytest` for testing 
-
-
-## Installation
 ```
-git clone git@github.com:snbby/several-exercises.git
-cd several-exercises
+# Preparement
+cd python
 uv sync
 ```
-
-## Run tests
+### Run tests
 ```
 uv run pytest
 ```
 
-## Thoughts
-### Concurrency exercise
+### Thoughts
+#### Concurrency exercise
 I decided the concurrent function to return dict with results.  
 We can just return the list of responses/errors in the same order the urls were provided, but in my opinion it will require more boilerplate to handle these results.  
 Retry wrapper logic can be added additionally (let's say 3 retries with exponential backoff).  
 Printing is used to showcase active and max_active coroutines. Testing actual concurrency requires more boilerplate.  
 
 
-### License plate problem
+#### License plate problem
 Complexity of the calculation is O(1).  
 You can view the maximum generatable number in the tests.
